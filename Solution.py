@@ -28,7 +28,8 @@ class DontCrushDuckieTaskSolution(TaskSolution):
             area = cv2.countNonZero(mask)
 
             if (area >= 0.06*height*width):
-                condition = False 
+                condition = False
+                obs, reward, done, info = env.step([0, 0])
             else:
                 condition = True                      
                 env.render()
